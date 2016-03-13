@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 选择器 root、not、empty 和 target</title>
+    <!--root-->
+    <style>
+        :root{
+            background-color: darkgray;
+        }
+        body{/*如果设置了root的样式，那么body只给内容部分生效；如果没有root，那么body给整个页面生效*/
+            background-color: darkgreen;
+        }
+        /*not*/
+        div *:not(h1){
+            color:crimson;
+        }
+        /*empty*/
+        :empty{
+            background-color:darkviolet;
+        }
+        /*target*/
+        :target{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>你好么？</h2>
+        <h1>这里是标题</h1>
+        <p>这里是一个p标签</p>
+    </div>
+    <table border="1">
+        <tr>
+            <td>内容1</td>
+            <td>内容2</td>
+        </tr>
+        <tr>
+            <td>内容1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>内容2</td>
+        </tr>
+    </table>
+    <br/>
+    <!--页内跳转-->
+    <a href="#a1" >菜单1</a>|
+    <a href="#a2" >菜单2</a>|
+    <a href="#a3" >菜单3</a>|
+    <a href="#a4" >菜单4</a>
+    <div id="a1">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+    <div id="a2">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+    <div id="a3">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+    <div id="a4">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+</body>
+</html>
