@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        选择器：first-child,last-child,nth-child和nth-last-child
+        选择器：nth-of-type和nth-last-of-type
+        only-child选择器
+    </title>
+    <!--first-child-->
+    <style>
+        .p1{
+            font-size: 20px;
+            color: blue;
+        }
+        .p2{
+            font-size: 20px;
+            color: blue;
+        }
+        li:first-child{
+            background-color:yellow;
+        }
+        li:last-child{
+            background-color: blue;
+        }
+        li:nth-child(2){/*第几个子元素利用样式*/
+            background-color: darkmagenta;
+        }
+        li:nth-last-child(2){/*从下向上数第几个子元素利用样式*/
+            background-color:orangered;
+        }
+        li:nth-child(odd){/*奇数行使用样式，偶数是even*/
+            background-color: deeppink;
+        }
+        /*.div h2:nth-child(odd){
+            background-color: firebrick;
+        }*/
+        .div1 h2:nth-of-type(odd){/*只计算同类型的*/
+            background-color: yellow;
+        }
+        /*nth-child(n)
+         an+b
+        */
+        .div2 li:nth-child(4n+1){
+            background-color: red;
+        }
+        .div2 li:nth-child(4n+2){
+            background-color:darkviolet;
+        }
+        .div2 li:nth-child(4n+3){
+            background-color: darkorange;
+        }
+        .div2 li:nth-child(4n){
+            background-color: deeppink;
+        }
+        li:only-child{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <p class="p1">
+        利用first-child,last-child,nth-child和nth-last-child能够特别针对一个<br/>
+        父元素中的第一个子元素、最后一个子元素、指定序号的子元素，甚至第偶数个或<br/>
+        第奇数个子元素进行样式的指定。
+    </p>
+    <h3>列表</h3>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+    </ul>
+    <h4>nth-of-type和nth-last-of-type:</h4>
+    <p class="p2">
+        在css3中，使用nth-of-type和nth-last-of-type选择器来避免这类问题的发生。<br/>
+    使用这两个选择器时，css3在计算子元素是第奇数个子元素还是第偶数个子元素时，就<br/>
+    只针对同类型的子元素进行计算了。
+    </p>
+    <div class="div1">
+        <h2>文章标题</h2>
+        <p>文章正文</p>
+        <h2>文章标题</h2>
+        <p>文章正文</p>
+        <h2>文章标题</h2>
+        <p>文章正文</p>
+        <h2>文章标题</h2>
+        <p>文章正文</p>
+    </div>
+    <div class="div2">
+        <ul>
+            <li>列表1</li>
+            <li>列表2</li>
+            <li>列表3</li>
+            <li>列表4</li>
+            <li>列表1</li>
+            <li>列表2</li>
+            <li>列表3</li>
+            <li>列表4</li>
+            <li>列表1</li>
+            <li>列表2</li>
+            <li>列表3</li>
+            <li>列表4</li>
+        </ul>
+    </div>
+   <p>
+       可以使用only-child选择器来代替使用nth-child和nth-last-child的实现方法。
+   </p>
+
+       <ul>
+           <li>列表</li>
+       </ul>
+       <ul>
+           <li>列表</li>
+           <li>列表</li>
+           <li>列表</li>
+       </ul>
+
+</body>
+</html>
