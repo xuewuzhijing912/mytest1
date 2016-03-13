@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI元素状态伪类选择器，通用兄弟元素选择器</title>
+    <!--hover focus active-->
+    <style>
+        input[type="text"]:hover{
+            background-color:darkviolet;
+        }
+        input[type="text"]:focus{
+            background-color:aqua;
+        }
+        input[type="text"]:active{
+            background-color:darkgoldenrod;
+        }
+        input[type="checkbox"]:checked{
+            outline:1px solid deeppink;
+        }
+        /*enabled disabled*/
+         input[type="text"]:enabled{
+             background-color: gold;
+         }
+         input[type="text"]:disabled{
+             background-color: dimgrey;
+         }
+        div~ p{/*与div相邻的兄弟元素p加样式*/
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <p>css3的选择器中，除了结构性伪类选择器外，还有一种UI元素<br/>
+        状态伪类选择器。这些选择器的共同特点是：指定的样式只有<br/>
+        当元素处于某种状态下时才起作用，在默认状态下不起作用。
+    </p>
+    <p>
+        在css3中，共有17中UI元素状态伪类选择器，分别是E:hover、<br/>
+        E:active、E:disabled、E:read-only、E:checked、E:default、<br/>
+        E:indeterminate、E:selection、E:invalid、E:valid、E:required、<br/>
+        E:optional、E:in-range.
+    </p>
+    <input type="text" name="name">
+    <input type="text" name="age">
+    <hr/>
+
+
+    <input type="checkbox">阅读
+    <input type="checkbox">旅游
+    <input type="checkbox">看电影
+    <input type="checkbox">上网
+    <hr/>
+
+
+    <script>
+        function radio_change(){
+           var radio1= document.getElementById("radio1");
+           var text=document.getElementById("text");
+           if(radio1.checked){
+               text.disabled="";
+           }else{
+               text.value="";
+               text.disabled="disabled";
+           }
+        }
+    </script>
+    <input type="radio" id="radio1" name="radio" onchange="radio_change()">可用
+    <input type="radio" id="radio2" name="radio" onchange="radio_change()">不可用
+    <input type="text" id="text" disabled><!--默认是不可用状态-->
+    <hr/>
+    <p>
+        通用兄弟选择器，它用来指定位于同一个父元素之中的某个元素之后<br/>
+        的所有其他某个种类的兄弟元素所使用样式。
+    </p>
+    <div>
+        <div>
+            <p>p元素为div的子元素</p>
+            <p>p元素为div的子元素</p>
+        </div>
+        <p>p元素为div的子元素</p>
+        <p>p元素为div的子元素</p>
+        <p>p元素为div的子元素</p>
+    </div>
+</body>
+</html>
