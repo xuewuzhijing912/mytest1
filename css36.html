@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对盒子中容纳不下的内容的显示</title>
+    <style>
+        div:first-child{/*超出div的部分用overflow设置*/
+            /*overflow: hidden;*/
+            overflow-x: scroll;
+            white-space:nowrap;/*文字不换行*/
+            overflow-y: hidden;
+            width: 300px;
+            height: 150px;
+            border:solid 1px orange;
+        }
+        div:nth-last-child(3){
+            background-color:#ffaa00;
+            box-shadow:10px 10px 10px gray ;/*盒子阴影*/
+            width:200px;
+            height:100px;
+        }
+        #div1{
+            box-sizing: border-box;
+            width:100px;
+            height: 100px;
+            padding: 10px;
+            background-color:#00aaff;
+        }
+        #div2{
+            box-sizing: content-box;
+            width:100px;
+            height: 100px;
+            padding: 10px;
+            background-color:#ffaa00;
+        }
+    </style>
+</head>
+<body>
+      <div>
+          <h1>标题文字</h1>
+          <p>文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+          </p>
+          <p>文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+              文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例
+          </p>
+      </div>
+      <br/>
+      <hr/>
+      <div></div>
+      <br/>
+
+      <hr/>
+      <div id="div1"></div>
+      <div id="div2"></div>
+</body>
+</html>
