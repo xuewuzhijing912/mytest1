@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3盒子相关样式</title>
+    <style>
+        div{/*div是一个块级元素*/
+            background-color: aqua;
+           /* display: inline;*/
+            display: inline-block;
+            width: 300px;;
+        }
+        span{/*span是一个内联元素*/
+            background-color: orange;
+            display: inline-block;
+            width: 300px;;
+        }
+        table{
+            display: inline-table;
+            border:solid 3px blue;
+        }
+        td{
+            border:solid 1px orchid;
+        }
+        div[id=div1] div{
+            display: list-item;/*将div变成了列表显示样式*/
+            list-style-type:circle;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>div元素</div>
+    <div>div元素</div>
+    <br/>
+    <span>span元素</span>
+    <span>span元素</span>
+    <hr/>
+    你好
+    <table>
+        <tr>
+            <td>A</td><td>A</td><td>A</td><td>A</td>
+        </tr>
+        <tr>
+            <td>A</td><td>A</td><td>A</td><td>A</td>
+        </tr>
+        <tr>
+            <td>A</td><td>A</td><td>A</td><td>A</td>
+        </tr>
+        <tr>
+            <td>A</td><td>A</td><td>A</td><td>A</td>
+        </tr>
+    </table>
+    你好
+    <hr/>
+    <div  id="div1">
+        <div>实例1</div>
+        <div>实例2</div>
+        <div>实例3</div>
+        <div>实例4</div>
+    </div>
+</body>
+</html>
