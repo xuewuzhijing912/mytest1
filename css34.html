@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字和字体相关样式</title>
+    <style>
+        div{
+            text-shadow: 5px  5px  5px red;/*左右偏移，上下偏移，模糊程度，颜色*/
+            color: black;
+            font-size: 40px;
+            font-weight:bold;
+            font-family:宋体;
+        }
+        @font-face {<!--使用服务器端字体-->
+            font-family: WebFont;
+            /*ttf:o otf:t*/
+            src:url('DejaVuSansMono-BoldOblique.ttf')format("truetype");
+            font-weight: normal;
+        }
+        div{
+            font-family:WebFont;
+        }
+        #div1{
+            font-family:Arial;
+            font-size: 16px;
+            /*x-height:58 font-size:100px aspect:0.58*/
+            /*c=(a/b) s*/
+            font-size-adjust:0.60;
+        }
+        #div2{
+            font-family:cursive;
+            font-size: 16px;
+            font-size-adjust:0.57;
+        }
+        #div3{
+            font-family:Ebrima;
+            font-size: 16px;
+            font-size-adjust:0.57;
+        }
+    </style>
+</head>
+<body>
+    <!--给文字添加阴影text-shadow:length length length color-->
+    <div>你好</div>
+
+    <!--自动换行word-break:normal,keep-all,break-all-->
+    <div>
+        This is my web page.
+    </div>
+    <div id="div1">Test sample</div>
+    <div id="div2">Test sample</div>
+    <div id="div3">Test sample</div>
+</body>
+</html>
