@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 中的动画功能</title>
+    <style>
+        div{
+            background-color:#ffff00;
+            color:#000000;
+            width:100px;
+            /*transition:background-color 3s linear;*//*动画执行时间为1s */
+            /*transition-property:background-color;
+            transition-duration:3s;
+            transition-timing-function:linear;*/
+            /*transition:background-color 1s linear,color 1s linear,width 1s linear;*/
+            transition:transform 1s linear,color 1s linear,width 1s linear;
+        }
+        div:hover{
+            transform:rotate(360deg);
+            /*background-color:#ff00ff;*/
+            color:#ffffff;
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+  <!--transition:property duration timing-function-->
+  <div>示例文字</div>
+</body>
+</html>
