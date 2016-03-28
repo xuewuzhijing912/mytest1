@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现动画的方法</title>
+    <style>
+        div{
+            position:absolute;
+            background-color: #ffff00;
+            top: 100px;
+            width: 500px;
+        }
+        @-moz-keyframes mycolor {
+           0%{
+               background-color:red;
+               transform:rotate(0deg);
+           }
+           30%{
+               background-color:aqua;
+               transform:rotate(30deg);
+           }
+           60%{
+               background-color:lightskyblue;
+               transform:rotate(-30deg);
+           }
+           100%{
+               background-color:red;
+               transform:rotate(0deg);
+           }
+        }
+        div:hover{
+            -moz-animation-name: mycolor;
+            -moz-animation-duration:5s;
+           /* -moz-animation-timing-function:linear;*/
+            -moz-animation-timing-function:ease-in;
+        }
+    </style>
+</head>
+<body>
+   <!--linear匀速 ease-in由慢到快 ease-out又快到蛮 ease先慢再快再慢 ease-in-out 同上-->
+   <div>示例文字</div>
+</body>
+</html>
